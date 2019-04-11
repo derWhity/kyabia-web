@@ -16,6 +16,7 @@
         <md-button class="md-icon-button" v-if="showReload" @click.native="$emit('reload')">
           <md-icon>autorenew</md-icon>
         </md-button>
+        <language-menu></language-menu>
         <user-menu></user-menu>
       </div>
     </md-whiteframe>
