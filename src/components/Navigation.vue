@@ -4,7 +4,7 @@
       <div class="md-toolbar-container">
       </div>
     </md-whiteframe>
-    <md-list>
+    <md-list class="mainNav md-whiteframe-1dp">
       <md-list-item>
         <router-link exact to="/">
           <md-icon>search</md-icon>
@@ -52,14 +52,21 @@
         </md-list-item>
       </template>
     </md-list>
+    <md-whiteframe md-tag="md-toolbar" class="md-tiny">
+      <a href="https://github.com/derWhity/kyabia" target="_blank">{{$t('app.PoweredBy', {app: app.name, version: app.version})}}</a>
+    </md-whiteframe>
   </md-sidenav>
 </template>
 
 <script>
+import {appInfo} from '../Version';
+
 export default {
   name: 'navigation',
   data() {
-    return {};
+    return {
+      app: appInfo,
+    };
   },
   watch: {
     '$route': function() {
@@ -78,6 +85,20 @@ export default {
 </script>
 
 <style>
+
+.mainNav {
+  flex: 1;
+}
+
+.md-sidenav .md-sidenav-content .md-tiny {
+  min-height: 24px;
+  background-color: rgba(135, 138, 143, 0.5);
+}
+
+.md-sidenav .md-sidenav-content .md-tiny a {
+  color: rgb(82, 86, 97);
+  font-size: 12px;
+}
 
 .logo-header {
   background-image: url(/static/img/logo1x.png);
@@ -106,6 +127,8 @@ export default {
     border-right-style: solid;
     border-right-width: 1px;
     border-right-color: #888;
+    display:flex;
+    flex-direction: column;
   }
 
   .md-sidenav.main-sidebar .md-backdrop {

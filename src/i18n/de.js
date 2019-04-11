@@ -265,4 +265,6 @@ export const translations = {
     'lang.tr': 'Türkisch',
     'lang.vi': 'Vietnamesisch',
     'lang.zh': 'Chinesisch',
+    // Application info
+    'app.PoweredBy': 'Powered by {app} - v{version}',
 };
